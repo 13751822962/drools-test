@@ -1,0 +1,34 @@
+package com.test
+
+import com.test.Main.Message;
+
+global java.util.List list
+
+rule "Hello World"
+    dialect "mvel"
+    when
+        m : Message(status == Message.HELLO, message:message)
+    then
+        System.out.println(message + "!!!!");
+    modify(m) {
+        message = "GoodBye cruel world",
+        status = Message.GOODBYE
+    }
+end
+
+
+rule "GoodBye"
+    dialect "java"
+    when
+        m : Message( status == Message.GOODBYE, message : message )
+    then
+        System.out.println( message );
+end
+
+rule "test"
+    dialect "java"
+    when
+         m : Message( status == Message.TEST, message : message )
+    then
+        System.out.println(message);
+end

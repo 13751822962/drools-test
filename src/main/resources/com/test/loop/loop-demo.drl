@@ -1,0 +1,45 @@
+package com.test.loop
+
+import com.test.LoopDemo.B
+import com.test.LoopDemo.StatusEnum
+
+
+rule "startRule"
+    when
+        $b : B(status == StatusEnum.START, str : name)
+    then
+        System.out.println( str + " status: start -> stop");
+        Thread.sleep(1000);
+        $b.setStatus(StatusEnum.STOP);
+        update($b);
+end
+
+rule "stopRule"
+    no-loop true
+    when
+        $b : B(status == StatusEnum.STOP, str : name)
+    then
+       /* System.out.println( str + " status: stop -> stop");
+        update($b);*/
+        System.out.println( str + " status: stop -> restart");
+        Thread.sleep(1000);
+        $b.setStatus(StatusEnum.RESTART);
+        update($b);
+end
+
+rule "restartRule"
+    no-loop true
+    when
+        $b : B(status == StatusEnum.RESTART, str : name)
+    then
+        System.out.println( str + " status: restart -> stop");
+        Thread.sleep(1000);
+        $b.setStatus(StatusEnum.STOP);
+        update($b);
+end
+
+
+
+
+
+

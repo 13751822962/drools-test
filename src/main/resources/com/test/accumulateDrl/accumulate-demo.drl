@@ -1,0 +1,34 @@
+package com.test.accumulateDrl;
+
+import com.test.vo.Account;
+import com.test.vo.CashFlow;
+import java.util.ArrayList;
+
+rule "accumulate-demo"
+    when
+        $a : Account()
+        accumulate(
+            CashFlow(accountNo == $a.id, type == CashFlow.INCOME, $amount : amount),
+           // init( double total = 0; ),
+            $totalAmount: sum($amount),
+            maxAmount: max($amount)
+        )
+    then
+        System.out.println("第一种写法计算总金额：");
+        System.out.println("总金额：" + $totalAmount);
+        System.out.println("最大值：" + maxAmount);
+end
+
+rule "accumulate-demo2"
+    when
+        $a : Account()
+        $totalIncome: Double() from accumulate(
+            CashFlow(accountNo == $a.id, type == CashFlow.INCOME, $amount : amount),
+            init( double total = 0; ),
+            action(total += $amount;),
+            result(total )
+        )
+    then
+        System.out.println("第二种写法计算总金额：");
+        System.out.println($totalIncome);
+end

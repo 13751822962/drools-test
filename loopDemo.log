@@ -1,0 +1,59 @@
+<object-stream>
+<org.drools.core.audit.WorkingMemoryLog>
+  <version>6.1</version>
+  <events>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>1</type>
+      <factId>1</factId>
+      <objectToString>B{status=START, name=&apos;sad&apos;}</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>startRule [1]</activationId>
+      <rule>startRule</rule>
+      <declarations>str=sad; $b=B{status=START, name=&apos;sad&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>startRule [1]</activationId>
+      <rule>startRule</rule>
+      <declarations>str=sad; $b=B{status=START, name=&apos;sad&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>startRule [1]</activationId>
+      <rule>startRule</rule>
+      <declarations>str=sad; $b=B{status=START, name=&apos;sad&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ObjectLogEvent>
+      <type>2</type>
+      <factId>1</factId>
+      <objectToString>B{status=START, name=&apos;sad&apos;}</objectToString>
+    </org.drools.core.audit.event.ObjectLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>4</type>
+      <activationId>startRule [1]</activationId>
+      <rule>startRule</rule>
+      <declarations>str=sad; $b=B{status=START, name=&apos;sad&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>6</type>
+      <activationId>startRule [1]</activationId>
+      <rule>startRule</rule>
+      <declarations>str=sad; $b=B{status=START, name=&apos;sad&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+    <org.drools.core.audit.event.ActivationLogEvent>
+      <type>7</type>
+      <activationId>startRule [1]</activationId>
+      <rule>startRule</rule>
+      <declarations>str=sad; $b=B{status=START, name=&apos;sad&apos;}</declarations>
+      <factHandleIds>1</factHandleIds>
+    </org.drools.core.audit.event.ActivationLogEvent>
+  </events>
+</org.drools.core.audit.WorkingMemoryLog>
+</object-stream>

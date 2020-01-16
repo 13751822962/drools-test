@@ -1,0 +1,15 @@
+package com.test.delay
+
+rule "dur"
+    duration 1000
+    no-loop true
+    when
+        eval(true)
+    then
+        System.out.println("rule thread id:"+Thread.currentThread().getId());
+end
+
+
+
+
+

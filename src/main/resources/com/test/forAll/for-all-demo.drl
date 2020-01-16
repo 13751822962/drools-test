@@ -1,0 +1,26 @@
+package com.test.forAll
+
+
+import com.test.vo.Account;
+import com.test.vo.CashFlow;
+
+
+rule "for-all-demo1"
+    when
+        //not(p1 and not(and p2 p3...))
+        //exists Account()
+        exists CashFlow()
+       /* forall(
+            $a : Account(id == 1)
+            CashFlow(accountNo == $a.getId())
+        )*/
+        //not($a: Account(id == 23) and not(CashFlow(accountNo == $a.getId())))
+        forall(
+           $a : Account()
+           CashFlow(accountNo == $a.getId())
+
+        )
+    then
+        //System.out.println($a.getName());
+        System.out.println("add data was come from same account!");
+end

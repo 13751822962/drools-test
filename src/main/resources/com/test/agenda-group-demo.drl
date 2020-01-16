@@ -1,0 +1,39 @@
+package com.test
+
+rule "rule1"
+    agenda-group "group1"
+    salience 1
+    when
+    then
+        System.out.println("group1触发,salience = 1");
+end
+
+rule "rule2"
+    agenda-group "group2"
+    when
+    then
+        System.out.println("group2触发");
+end
+
+rule "rule3"
+    enabled false
+    salience 3
+    then
+        System.out.println("没有分组的规则触发,salience = 3");
+end
+
+rule "rule6"
+    enabled false
+    salience 4
+    then
+        System.out.println("没有分组的规则触发,salience = 4");
+end
+
+rule "rule4"
+    agenda-group "group1"
+    salience 2
+    when
+    then
+        System.out.println("都是属于group1组的规则触发, salience = 2");
+end
+

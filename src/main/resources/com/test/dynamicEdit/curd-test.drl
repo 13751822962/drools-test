@@ -1,0 +1,21 @@
+package com.test.dynamicEdit;
+dialect  "java"
+
+import com.test.vo.Account;
+import com.test.vo.CashFlow;
+import java.util.ArrayList;
+
+rule "test"
+    when
+         $a: Account()
+         $flows : ArrayList(size > 0) from collect(CashFlow(accountNo == $a.id, type == CashFlow.INCOME))
+    then
+        double income = 0;
+        for (Object flow : $flows) {
+             CashFlow cashFlow = (CashFlow)flow;
+             income += cashFlow.getAmount();
+
+        }
+        System.out.println($a.getName() + "收入 -> " + income + "￥");
+end
+//System.out.println(cashFlow.getMvtDate() + " income:" + cashFlow.getAmount());

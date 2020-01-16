@@ -1,0 +1,6 @@
+package com.ysy
+
+rule "test"
+    then
+        System.out.println("测试");
+end

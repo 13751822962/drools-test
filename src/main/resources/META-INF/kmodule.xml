@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kmodule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xmlns="http://www.drools.org/xsd/kmodule">
+
+    <kbase packages="com.test" equalsBehavior="equality">
+        <ksession name="test" />
+    </kbase>
+
+    <kbase name="agendaGroupDemo" packages="com.test">
+        <ksession name="agendaGroupDemo"/>
+    </kbase>
+
+    <kbase name="activationGroupDemo" packages="com.test">
+        <ksession name="activationGroupDemo"/>
+    </kbase>
+
+    <kbase packages="com.test" name="dateEffectiveDemo">
+        <ksession name="dateEffectiveDemo"/>
+    </kbase>
+
+    <kbase packages="com.test.delay" name="durationDemo">
+        <ksession name="durationDemo"/>
+    </kbase>
+
+    <kbase packages="com.test.loop" name="loopDemo">
+        <ksession name="loopDemo"/>
+    </kbase>
+
+    <kbase packages="com.test.forAll" name="forAllDemo">
+        <ksession name="forAllDemo"/>
+    </kbase>
+
+    <kbase packages="com.test.fromDrl" name="fromDemo">
+        <ksession name="fromDemo"/>
+    </kbase>
+
+    <kbase packages="com.test.collectDrl" name="collectDemo">
+        <ksession name="collectDemo"/>
+    </kbase>
+
+    <kbase packages="com.test.accumulateDrl" name="accumulateDemo">
+        <ksession name="accumulateDemo"/>
+    </kbase>
+
+    <kbase packages="com.test.customAccumulate" name="customAccumulateDemo">
+        <ksession name="customAccumulateDemo"/>
+    </kbase>
+
+    <kbase packages="com.test.dynamicEdit" name="dynamicEditDemo">
+        <ksession name="dynamicEditDemo"/>
+    </kbase>
+
+</kmodule>

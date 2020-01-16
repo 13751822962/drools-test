@@ -1,0 +1,18 @@
+package com.test
+
+
+rule "aa"
+    activation-group "foo"
+    when
+
+    then
+        System.out.println("rule1被触发");
+end
+
+rule "bb"
+    activation-group "foo"
+    when
+
+    then
+        System.out.println("rule2被触发");
+end

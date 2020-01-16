@@ -1,0 +1,13 @@
+package com.test.fromDrl;
+
+import com.test.vo.Account;
+import com.test.vo.CashFlow;
+
+
+rule "from-demo"
+    when
+        $a : Account()
+        $cashFlow : CashFlow(accountNo == $a.id) from $a.flows
+    then
+        System.out.println($cashFlow.toString());
+end

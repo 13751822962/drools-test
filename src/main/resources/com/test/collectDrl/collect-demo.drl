@@ -1,0 +1,32 @@
+package com.test.collectDrl;
+
+import com.test.vo.Account;
+import com.test.vo.CashFlow;
+import java.util.ArrayList;
+
+
+rule "collect-demo1"
+    when
+        $a : Account()
+        $flows: ArrayList(size > 0) from collect(CashFlow(accountNo == $a.id, type == CashFlow.INCOME))
+    then
+        double income = 0;
+        for (Object flow : $flows) {
+            CashFlow cashFlow = (CashFlow)flow;
+            income += cashFlow.getAmount();
+        }
+        System.out.println($a.getName() + "收入：" + income + "￥");
+end
+
+rule "collect-demo2"
+    when
+        $a : Account()
+        $flows: ArrayList(size > 0) from collect(CashFlow(accountNo == $a.id, type == CashFlow.TRANSFER))
+    then
+        double income = 0;
+        for (Object flow : $flows) {
+            CashFlow cashFlow = (CashFlow)flow;
+            income += cashFlow.getAmount();
+        }
+        System.out.println($a.getName() + "支出：" + income + "￥");
+end

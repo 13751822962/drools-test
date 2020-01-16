@@ -1,0 +1,21 @@
+package com.test.customAccumulate;
+
+import com.test.vo.Account;
+import com.test.vo.CashFlow;
+import java.util.ArrayList;
+
+import accumulate com.test.func.AverageFunction myAverage;
+
+rule "custom-accumulate-demo"
+    when
+        $a : Account()
+        accumulate(
+            CashFlow(accountNo == $a.id, type == CashFlow.INCOME, $amount : amount),
+            $avergae: myAverage($amount)
+        )
+    then
+        System.out.println("使用自定义的求平均值方法(只保留两位小数)：com.test.func.AverageFunction");
+        System.out.println("计算结果：" + $avergae);
+end
+
+
